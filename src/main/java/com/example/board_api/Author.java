@@ -1,13 +1,13 @@
 package com.example.board_api;
 
-import lombok.*;
-import java.time.LocalDateTime;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 public class Author {
-    static Long staticId;
+    static Long staticId=1L;
     static List<Author> authors = new ArrayList<>();
     private Long id;
     private String name;
