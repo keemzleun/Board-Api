@@ -13,13 +13,17 @@ public class AuthorController {
         Author.authors.add(new Author("김선국3", "kim3@naver.com", "password1"));
     }
     @PostMapping("/author/register1")
-    public void authorRegister1(@RequestBody Author body){
-        Author.authors.add(new Author(body.getName(), body.getEmail(), body.getEmail()));
+    @ResponseBody
+    public String authorRegister1(@RequestBody Author body){
+        Author.authors.add(body);
+        return "ok";
     }
 
     @PostMapping("/author/register2")
-    public void authorRegister2(Author body){
-        Author.authors.add(new Author(body.getName(), body.getEmail(), body.getEmail()));
+    @ResponseBody
+    public String authorRegister2(Author body){
+        Author.authors.add(body);
+        return "ok";
     }
     @GetMapping("/author/list")
     @ResponseBody
